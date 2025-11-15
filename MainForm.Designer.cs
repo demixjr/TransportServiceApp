@@ -31,22 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.роботаЗТаблицямиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.клієнтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.водіїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.водійськіПосвідченняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.маршрутиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.послугиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типиПослугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.автотранспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типиАвтотранспортуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClientDataGrid = new System.Windows.Forms.DataGridView();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transportServiceDBDataSet = new TransportServiceApp.TransportServiceDBDataSet();
             this.clientTableAdapter = new TransportServiceApp.TransportServiceDBDataSetTableAdapters.ClientTableAdapter();
             this.DriverDataGrid = new System.Windows.Forms.DataGridView();
-            this.driverIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.experienceYearsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.licenseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.driverTableAdapter = new TransportServiceApp.TransportServiceDBDataSetTableAdapters.DriverTableAdapter();
             this.DriverLicenseDataGrid = new System.Windows.Forms.DataGridView();
@@ -104,14 +101,17 @@
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transportTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transportTypeTableAdapter = new TransportServiceApp.TransportServiceDBDataSetTableAdapters.TransportTypeTableAdapter();
-            this.клієнтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.водіїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.водійськіПосвідченняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.маршрутиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.послугиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.типиПослугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.автотранспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.типиАвтотранспортуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driverIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.experienceYearsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.licenseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
@@ -158,6 +158,62 @@
             this.роботаЗТаблицямиToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.роботаЗТаблицямиToolStripMenuItem.Text = "Робота з таблицями";
             // 
+            // клієнтиToolStripMenuItem
+            // 
+            this.клієнтиToolStripMenuItem.Name = "клієнтиToolStripMenuItem";
+            this.клієнтиToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.клієнтиToolStripMenuItem.Text = "Клієнти";
+            this.клієнтиToolStripMenuItem.Click += new System.EventHandler(this.клієнтиToolStripMenuItem_Click);
+            // 
+            // водіїToolStripMenuItem
+            // 
+            this.водіїToolStripMenuItem.Name = "водіїToolStripMenuItem";
+            this.водіїToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.водіїToolStripMenuItem.Text = "Водії";
+            this.водіїToolStripMenuItem.Click += new System.EventHandler(this.водіїToolStripMenuItem_Click);
+            // 
+            // водійськіПосвідченняToolStripMenuItem
+            // 
+            this.водійськіПосвідченняToolStripMenuItem.Name = "водійськіПосвідченняToolStripMenuItem";
+            this.водійськіПосвідченняToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.водійськіПосвідченняToolStripMenuItem.Text = "Водійські посвідчення";
+            this.водійськіПосвідченняToolStripMenuItem.Click += new System.EventHandler(this.водійськіПосвідченняToolStripMenuItem_Click);
+            // 
+            // маршрутиToolStripMenuItem
+            // 
+            this.маршрутиToolStripMenuItem.Name = "маршрутиToolStripMenuItem";
+            this.маршрутиToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.маршрутиToolStripMenuItem.Text = "Маршрути";
+            this.маршрутиToolStripMenuItem.Click += new System.EventHandler(this.маршрутиToolStripMenuItem_Click);
+            // 
+            // послугиToolStripMenuItem
+            // 
+            this.послугиToolStripMenuItem.Name = "послугиToolStripMenuItem";
+            this.послугиToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.послугиToolStripMenuItem.Text = "Послуги";
+            this.послугиToolStripMenuItem.Click += new System.EventHandler(this.послугиToolStripMenuItem_Click);
+            // 
+            // типиПослугToolStripMenuItem
+            // 
+            this.типиПослугToolStripMenuItem.Name = "типиПослугToolStripMenuItem";
+            this.типиПослугToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.типиПослугToolStripMenuItem.Text = "Типи послуг";
+            this.типиПослугToolStripMenuItem.Click += new System.EventHandler(this.типиПослугToolStripMenuItem_Click);
+            // 
+            // автотранспортToolStripMenuItem
+            // 
+            this.автотранспортToolStripMenuItem.Name = "автотранспортToolStripMenuItem";
+            this.автотранспортToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.автотранспортToolStripMenuItem.Text = "Автотранспорт";
+            this.автотранспортToolStripMenuItem.Click += new System.EventHandler(this.автотранспортToolStripMenuItem_Click);
+            // 
+            // типиАвтотранспортуToolStripMenuItem
+            // 
+            this.типиАвтотранспортуToolStripMenuItem.Name = "типиАвтотранспортуToolStripMenuItem";
+            this.типиАвтотранспортуToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.типиАвтотранспортуToolStripMenuItem.Text = "Типи автотранспорту";
+            this.типиАвтотранспортуToolStripMenuItem.Click += new System.EventHandler(this.типиАвтотранспортуToolStripMenuItem_Click);
+            // 
             // ClientDataGrid
             // 
             this.ClientDataGrid.AutoGenerateColumns = false;
@@ -175,47 +231,6 @@
             this.ClientDataGrid.RowTemplate.Height = 24;
             this.ClientDataGrid.Size = new System.Drawing.Size(679, 110);
             this.ClientDataGrid.TabIndex = 1;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
             // 
             // clientBindingSource
             // 
@@ -249,55 +264,6 @@
             this.DriverDataGrid.RowTemplate.Height = 24;
             this.DriverDataGrid.Size = new System.Drawing.Size(805, 110);
             this.DriverDataGrid.TabIndex = 2;
-            // 
-            // driverIDDataGridViewTextBoxColumn
-            // 
-            this.driverIDDataGridViewTextBoxColumn.DataPropertyName = "DriverID";
-            this.driverIDDataGridViewTextBoxColumn.HeaderText = "DriverID";
-            this.driverIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.driverIDDataGridViewTextBoxColumn.Name = "driverIDDataGridViewTextBoxColumn";
-            this.driverIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.driverIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstNameDataGridViewTextBoxColumn1
-            // 
-            this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn1.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
-            this.firstNameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn1
-            // 
-            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
-            this.lastNameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // phoneDataGridViewTextBoxColumn1
-            // 
-            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
-            this.phoneDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // experienceYearsDataGridViewTextBoxColumn
-            // 
-            this.experienceYearsDataGridViewTextBoxColumn.DataPropertyName = "ExperienceYears";
-            this.experienceYearsDataGridViewTextBoxColumn.HeaderText = "ExperienceYears";
-            this.experienceYearsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.experienceYearsDataGridViewTextBoxColumn.Name = "experienceYearsDataGridViewTextBoxColumn";
-            this.experienceYearsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // licenseIDDataGridViewTextBoxColumn
-            // 
-            this.licenseIDDataGridViewTextBoxColumn.DataPropertyName = "LicenseID";
-            this.licenseIDDataGridViewTextBoxColumn.HeaderText = "LicenseID";
-            this.licenseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.licenseIDDataGridViewTextBoxColumn.Name = "licenseIDDataGridViewTextBoxColumn";
-            this.licenseIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // driverBindingSource
             // 
@@ -779,61 +745,95 @@
             // 
             this.transportTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // клієнтиToolStripMenuItem
+            // clientIDDataGridViewTextBoxColumn
             // 
-            this.клієнтиToolStripMenuItem.Name = "клієнтиToolStripMenuItem";
-            this.клієнтиToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.клієнтиToolStripMenuItem.Text = "Клієнти";
-            this.клієнтиToolStripMenuItem.Click += new System.EventHandler(this.клієнтиToolStripMenuItem_Click);
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ID клієнта";
+            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientIDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // водіїToolStripMenuItem
+            // firstNameDataGridViewTextBoxColumn
             // 
-            this.водіїToolStripMenuItem.Name = "водіїToolStripMenuItem";
-            this.водіїToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.водіїToolStripMenuItem.Text = "Водії";
-            this.водіїToolStripMenuItem.Click += new System.EventHandler(this.водіїToolStripMenuItem_Click);
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Ім\'я";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // водійськіПосвідченняToolStripMenuItem
+            // lastNameDataGridViewTextBoxColumn
             // 
-            this.водійськіПосвідченняToolStripMenuItem.Name = "водійськіПосвідченняToolStripMenuItem";
-            this.водійськіПосвідченняToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.водійськіПосвідченняToolStripMenuItem.Text = "Водійські посвідчення";
-            this.водійськіПосвідченняToolStripMenuItem.Click += new System.EventHandler(this.водійськіПосвідченняToolStripMenuItem_Click);
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Прізвище";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // маршрутиToolStripMenuItem
+            // phoneDataGridViewTextBoxColumn
             // 
-            this.маршрутиToolStripMenuItem.Name = "маршрутиToolStripMenuItem";
-            this.маршрутиToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.маршрутиToolStripMenuItem.Text = "Маршрути";
-            this.маршрутиToolStripMenuItem.Click += new System.EventHandler(this.маршрутиToolStripMenuItem_Click);
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Номер телефону";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.Width = 125;
             // 
-            // послугиToolStripMenuItem
+            // emailDataGridViewTextBoxColumn
             // 
-            this.послугиToolStripMenuItem.Name = "послугиToolStripMenuItem";
-            this.послугиToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.послугиToolStripMenuItem.Text = "Послуги";
-            this.послугиToolStripMenuItem.Click += new System.EventHandler(this.послугиToolStripMenuItem_Click);
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Пошта";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 125;
             // 
-            // типиПослугToolStripMenuItem
+            // driverIDDataGridViewTextBoxColumn
             // 
-            this.типиПослугToolStripMenuItem.Name = "типиПослугToolStripMenuItem";
-            this.типиПослугToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.типиПослугToolStripMenuItem.Text = "Типи послуг";
-            this.типиПослугToolStripMenuItem.Click += new System.EventHandler(this.типиПослугToolStripMenuItem_Click);
+            this.driverIDDataGridViewTextBoxColumn.DataPropertyName = "DriverID";
+            this.driverIDDataGridViewTextBoxColumn.HeaderText = "ID водія";
+            this.driverIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.driverIDDataGridViewTextBoxColumn.Name = "driverIDDataGridViewTextBoxColumn";
+            this.driverIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.driverIDDataGridViewTextBoxColumn.Width = 125;
             // 
-            // автотранспортToolStripMenuItem
+            // firstNameDataGridViewTextBoxColumn1
             // 
-            this.автотранспортToolStripMenuItem.Name = "автотранспортToolStripMenuItem";
-            this.автотранспортToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.автотранспортToolStripMenuItem.Text = "Автотранспорт";
-            this.автотранспортToolStripMenuItem.Click += new System.EventHandler(this.автотранспортToolStripMenuItem_Click);
+            this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn1.HeaderText = "Ім\'я";
+            this.firstNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+            this.firstNameDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // типиАвтотранспортуToolStripMenuItem
+            // lastNameDataGridViewTextBoxColumn1
             // 
-            this.типиАвтотранспортуToolStripMenuItem.Name = "типиАвтотранспортуToolStripMenuItem";
-            this.типиАвтотранспортуToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.типиАвтотранспортуToolStripMenuItem.Text = "Типи автотранспорту";
-            this.типиАвтотранспортуToolStripMenuItem.Click += new System.EventHandler(this.типиАвтотранспортуToolStripMenuItem_Click);
+            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Прізвище";
+            this.lastNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+            this.lastNameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // phoneDataGridViewTextBoxColumn1
+            // 
+            this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn1.HeaderText = "Номер телефону";
+            this.phoneDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            this.phoneDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // experienceYearsDataGridViewTextBoxColumn
+            // 
+            this.experienceYearsDataGridViewTextBoxColumn.DataPropertyName = "ExperienceYears";
+            this.experienceYearsDataGridViewTextBoxColumn.HeaderText = "Стаж";
+            this.experienceYearsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.experienceYearsDataGridViewTextBoxColumn.Name = "experienceYearsDataGridViewTextBoxColumn";
+            this.experienceYearsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // licenseIDDataGridViewTextBoxColumn
+            // 
+            this.licenseIDDataGridViewTextBoxColumn.DataPropertyName = "LicenseID";
+            this.licenseIDDataGridViewTextBoxColumn.HeaderText = "ID водійського посвідчення";
+            this.licenseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.licenseIDDataGridViewTextBoxColumn.Name = "licenseIDDataGridViewTextBoxColumn";
+            this.licenseIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // MainForm
             // 
@@ -886,20 +886,9 @@
         private TransportServiceDBDataSet transportServiceDBDataSet;
         private System.Windows.Forms.BindingSource clientBindingSource;
         private TransportServiceDBDataSetTableAdapters.ClientTableAdapter clientTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView DriverDataGrid;
         private System.Windows.Forms.BindingSource driverBindingSource;
         private TransportServiceDBDataSetTableAdapters.DriverTableAdapter driverTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn driverIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn experienceYearsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn licenseIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView DriverLicenseDataGrid;
         private System.Windows.Forms.BindingSource driverLicenseBindingSource;
         private TransportServiceDBDataSetTableAdapters.DriverLicenseTableAdapter driverLicenseTableAdapter;
@@ -963,6 +952,17 @@
         private System.Windows.Forms.ToolStripMenuItem типиПослугToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem автотранспортToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem типиАвтотранспортуToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn driverIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn experienceYearsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn licenseIDDataGridViewTextBoxColumn;
     }
     
 }
