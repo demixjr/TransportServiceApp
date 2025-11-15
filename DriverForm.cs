@@ -225,6 +225,7 @@ namespace TransportServiceApp
         dl.ExpiryDate AS LicenseExpiryDate
     FROM Driver d 
     INNER JOIN DriverLicense dl ON d.LicenseID = dl.LicenseID";
+            
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -249,6 +250,11 @@ namespace TransportServiceApp
                 }
             }
             
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
