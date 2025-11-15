@@ -17,6 +17,8 @@ namespace TransportServiceApp
 
         private void DriverForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "transportServiceDBDataSet.DriverLicense". При необходимости она может быть перемещена или удалена.
+            this.driverLicenseTableAdapter.Fill(this.transportServiceDBDataSet.DriverLicense);
             this.driverTableAdapter.Fill(this.transportServiceDBDataSet.Driver);
             cmbSortField.SelectedIndex = 0;
             cmbSortOrder.SelectedIndex = 0;
@@ -172,27 +174,6 @@ namespace TransportServiceApp
                 }
             }
         }
-
-        // Перегляд водіїв з інформацією про посвідчення
-      /*  private void btnDriversWithLicenseInfo_Click(object sender, EventArgs e)
-        {
-            string query = @"SELECT 
-            d.DriverID,
-            d.FirstName,
-            d.LastName, 
-            d.Phone,
-            d.ExperienceYears,
-            d.LicenseID,
-            dl.LicenseNumber,
-            dl.LicenseCategory,
-            dl.IssueDate,
-            dl.ExpiryDate
-        FROM Driver d 
-        INNER JOIN DriverLicense dl ON d.LicenseID = dl.LicenseID";
-
-            ExecuteQueryAndDisplay(query);
-        }
-      */
         // Скидання фільтрів
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -209,24 +190,66 @@ namespace TransportServiceApp
                 try
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    if (parameter != null)
-                    {
-                        SqlCommand command = new SqlCommand(query, connection);
-                        command.Parameters.Add(parameter);
-                        adapter = new SqlDataAdapter(command);
-                    }
 
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    dataGridView1.DataSource = dataTable;
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        if (parameter != null)
+                            command.Parameters.Add(parameter);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+
+                        adapter.Fill(dataTable);
+                        dataGridView1.DataSource = dataTable;
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Помилка виконання запиту: " + ex.Message, "Помилка",
-                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnDriversWithLicenseInfo_Click(object sender, EventArgs e)
+        {
+            string query = @"SELECT 
+        d.DriverID,
+        d.FirstName,
+        d.LastName, 
+        d.Phone,
+        d.ExperienceYears,
+        dl.LicenseNumber AS DriverLicenseNumber, 
+        dl.LicenseCategory AS DriverLicenseCategory,
+        dl.IssueDate AS LicenseIssueDate,
+        dl.ExpiryDate AS LicenseExpiryDate
+    FROM Driver d 
+    INNER JOIN DriverLicense dl ON d.LicenseID = dl.LicenseID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+
+                        adapter.Fill(dataTable);
+                        dataGridView1.AutoGenerateColumns = true;
+                        dataGridView1.DataSource = dataTable;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка виконання запиту: " + ex.Message, "Помилка",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+
         }
     }
 }

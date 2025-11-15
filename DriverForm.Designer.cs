@@ -65,17 +65,20 @@
             this.txtSearchName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnDriversWithLicenseInfo = new System.Windows.Forms.Button();
             this.btnSort = new System.Windows.Forms.Button();
             this.cmbSortOrder = new System.Windows.Forms.ComboBox();
             this.cmbSortField = new System.Windows.Forms.ComboBox();
             this.lblSort = new System.Windows.Forms.Label();
+            this.driverLicenseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.driverLicenseTableAdapter = new TransportServiceApp.TransportServiceDBDataSetTableAdapters.DriverLicenseTableAdapter();
+            this.btnDriversWithLicenseInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transportServiceDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.panelControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverLicenseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -97,7 +100,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(1153, 258);
             this.dataGridView1.TabIndex = 0;
             // 
             // driverIDDataGridViewTextBoxColumn
@@ -190,7 +193,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1108, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(1177, 27);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             this.bindingNavigator1.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
@@ -314,7 +317,7 @@
             this.panelControls.Controls.Add(this.lblSort);
             this.panelControls.Location = new System.Drawing.Point(12, 30);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(1084, 144);
+            this.panelControls.Size = new System.Drawing.Size(1153, 144);
             this.panelControls.TabIndex = 2;
             // 
             // btnAvgExperience
@@ -426,18 +429,6 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnDriversWithLicenseInfo
-            // 
-            /*
-             * this.btnDriversWithLicenseInfo.Location = new System.Drawing.Point(418, 101);
-            this.btnDriversWithLicenseInfo.Name = "btnDriversWithLicenseInfo";
-            this.btnDriversWithLicenseInfo.Size = new System.Drawing.Size(349, 30);
-            this.btnDriversWithLicenseInfo.TabIndex = 20;
-            this.btnDriversWithLicenseInfo.Text = "Водії і посвідчення";
-            this.btnDriversWithLicenseInfo.UseVisualStyleBackColor = true;
-            this.btnDriversWithLicenseInfo.Click += new System.EventHandler(this.btnDriversWithLicenseInfo_Click);
-            */
-            // 
             // btnSort
             // 
             this.btnSort.Location = new System.Drawing.Point(724, 20);
@@ -482,14 +473,33 @@
             this.lblSort.TabIndex = 3;
             this.lblSort.Text = "Сортування за полем:";
             // 
+            // driverLicenseBindingSource
+            // 
+            this.driverLicenseBindingSource.DataMember = "DriverLicense";
+            this.driverLicenseBindingSource.DataSource = this.transportServiceDBDataSet;
+            // 
+            // driverLicenseTableAdapter
+            // 
+            this.driverLicenseTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnDriversWithLicenseInfo
+            // 
+            this.btnDriversWithLicenseInfo.Location = new System.Drawing.Point(418, 101);
+            this.btnDriversWithLicenseInfo.Name = "btnDriversWithLicenseInfo";
+            this.btnDriversWithLicenseInfo.Size = new System.Drawing.Size(349, 30);
+            this.btnDriversWithLicenseInfo.TabIndex = 20;
+            this.btnDriversWithLicenseInfo.Text = "Водії і посвідчення";
+            this.btnDriversWithLicenseInfo.UseVisualStyleBackColor = true;
+            this.btnDriversWithLicenseInfo.Click += new System.EventHandler(this.btnDriversWithLicenseInfo_Click);
+            // 
             // DriverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 450);
+            this.ClientSize = new System.Drawing.Size(1177, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "DriverForm";
             this.Text = "Управління водіями";
             this.Load += new System.EventHandler(this.DriverForm_Load);
@@ -501,6 +511,7 @@
             this.bindingNavigator1.PerformLayout();
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverLicenseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,6 +558,8 @@
         private System.Windows.Forms.ComboBox cmbSortOrder;
         private System.Windows.Forms.ComboBox cmbSortField;
         private System.Windows.Forms.Label lblSort;
+        private System.Windows.Forms.BindingSource driverLicenseBindingSource;
+        private TransportServiceDBDataSetTableAdapters.DriverLicenseTableAdapter driverLicenseTableAdapter;
         private System.Windows.Forms.Button btnDriversWithLicenseInfo;
     }
 }
