@@ -156,7 +156,7 @@ namespace TransportServiceApp
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-
+                    dataGridView1.AutoGenerateColumns = true;
                     dataGridView1.DataSource = dt;
                 }
             }
